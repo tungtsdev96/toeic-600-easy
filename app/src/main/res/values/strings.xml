@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Toeic 600 Easy</string>
+
+    <!--menu navi bottom frag home-->
+    <string name="navi_lesson">Lesson</string>
+    <string name="navi_subject">Subject</string>
+    <string name="navi_favorite">Favorite</string>
+    <string name="navi_profile">Profile</string>
+
+    <!--menu navidrawer-->
+    <string name="navi_home">Home</string>
+    <string name="navi_favorite_lesson">Favorite Lesson</string>
+    <string name="navi_grammar">English Grammar</string>
+    <string name="group_learn_more_effective">LEARN MORE EFFECTIVE</string>
+    <string name="navi_learn_by_video">Learn Video</string>
+    <string name="navi_read_pharagraph">Read Paragraph</string>
+    <string name="navi_quiz">Vocabulary quiz</string>
+    <string name="navi_quiz_favorite">Quiz favorite</string>
+    <string name="group_setting">SETTINGS</string>
+    <string name="navi_feedback">Feedback</string>
+    <string name="navi_setting">Setting</string>
+    <string name="open">Open Drawer Layout</string>
+    <string name="close">Close Drawer Layout</string>
+
+
 </resources>

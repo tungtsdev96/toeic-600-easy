@@ -6,6 +6,29 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--custom color for toolbar-->
+    <style name="menuitemcolor" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/color_white</item>
+        <item name="drawerArrowStyle">@style/customdrawertoogle</item>
+    </style>
+
+    <style name="customdrawertoogle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/color_white</item>
+    </style>
+
+    <!--custom bottom navigationview-->
+    <style name="BottomNavigationView">
+        <item name="android:background">?android:attr/windowBackground</item>
+        <item name="android:itemBackground">@drawable/bg_navi_bottom_frag_home</item>
+        <item name="itemTextColor">@color/colorPrimaryDark</item>
     </style>
 
 </resources>
