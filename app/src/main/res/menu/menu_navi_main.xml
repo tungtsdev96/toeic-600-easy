@@ -1,58 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:icon="@drawable/ic_home"
-        android:id="@+id/navi_home"
-        android:title="@string/navi_home"/>
+    <group android:checkableBehavior="single">
+
+        <item
+            android:icon="@drawable/ic_home"
+            android:id="@+id/navi_home"
+            android:title="@string/navi_home"/>
+
+        <item
+
+            android:icon="@drawable/ic_favorite_lesson"
+            android:id="@+id/navi_favorite_lesson"
+            android:title="@string/navi_favorite_lesson"/>
+
+        <item
+            android:icon="@drawable/ic_grammar"
+            android:id="@+id/navi_grammar"
+            android:title="@string/navi_grammar"/>
+
+    </group>
 
     <item
-        android:icon="@drawable/ic_favorite_lesson"
-        android:id="@+id/navi_favorite_lesson"
-        android:title="@string/navi_favorite_lesson"/>
-
-    <item
-        android:icon="@drawable/ic_grammar"
-        android:id="@+id/navi_grammar"
-        android:title="@string/navi_grammar"/>
-
-    <item android:id="@+id/group_learn" android:title="@string/group_learn_more_effective">
+        android:title="@string/group_learn_more_effective"
+        android:id="@+id/group_learn">
 
         <menu>
-            <item
-                android:id="@+id/navi_learn_by_video"
-                android:title="@string/navi_learn_by_video"
-                android:icon="@drawable/ic_video"/>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/navi_learn_by_video"
+                    android:title="@string/navi_learn_by_video"
+                    android:icon="@drawable/ic_video"/>
 
-            <item
-                android:id="@+id/navi_read_pharagraph"
-                android:title="@string/navi_read_pharagraph"
-                android:icon="@drawable/ic_paragraph"/>
+                <item
+                    android:id="@+id/navi_read_pharagraph"
+                    android:title="@string/navi_read_pharagraph"
+                    android:icon="@drawable/ic_paragraph"/>
 
-            <item
-                android:id="@+id/navi_quiz"
-                android:title="@string/navi_quiz"
-                android:icon="@drawable/ic_quiz"/>
+                <item
+                    android:id="@+id/navi_quiz"
+                    android:title="@string/navi_quiz"
+                    android:icon="@drawable/ic_quiz"/>
 
-            <item
-                android:id="@+id/navi_quiz_favorite"
-                android:title="@string/navi_quiz_favorite"
-                android:icon="@drawable/ic_quiz_favorite"/>
+                <item
+                    android:id="@+id/navi_quiz_favorite"
+                    android:title="@string/navi_quiz_favorite"
+                    android:icon="@drawable/ic_quiz_favorite"/>
+
+                <item
+                    android:id="@+id/navi_play_game"
+                    android:title="@string/navi_play_game"
+                    android:icon="@drawable/ic_playgame"/>
+            </group>
         </menu>
-
     </item>
 
-    <item android:id="@+id/group_setting" android:title="@string/group_setting">
-        <menu>
-            <item
-                android:icon="@drawable/ic_feedback"
-                android:id="@+id/navi_feedback"
-                android:title="@string/navi_feedback"/>
 
-            <item
-                android:icon="@drawable/ic_settings"
-                android:id="@+id/navi_setting"
-                android:title="@string/navi_setting"/>
+    <item
+        android:id="@+id/group_setting"
+        android:title="@string/group_setting">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:icon="@drawable/ic_feedback"
+                    android:id="@+id/navi_feedback"
+                    android:title="@string/navi_feedback"/>
+
+                <item
+                    android:icon="@drawable/ic_settings"
+                    android:id="@+id/navi_setting"
+                    android:title="@string/navi_setting"/>
+            </group>
         </menu>
     </item>
 

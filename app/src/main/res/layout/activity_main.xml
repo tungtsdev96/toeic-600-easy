@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout"
-    tools:context=".view.activity.MainActivity">
+    tools:context=".main.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinator"
@@ -18,13 +18,12 @@
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:elevation="@dimen/size_4">
-
-            </android.support.v7.widget.Toolbar>
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:elevation="@dimen/size_4">
+                </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -34,10 +33,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <fragment
-                android:name="tungts.hust.edu.toeic600.view.home.fragment.HomeFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <!--<fragment-->
+                <!--android:name="tungts.hust.edu.toeic600.main.home.HomeFragment"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"/>-->
 
         </FrameLayout>
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/size_4">
+
+    <RelativeLayout
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/size_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_lesson"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ls_1"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <LinearLayout
+            android:layout_marginRight="@dimen/size_10"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_10"
+            android:layout_toRightOf="@+id/img_lesson"
+            android:layout_toLeftOf="@+id/img_like"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Lesson 1: "
+                android:id="@+id/lessonNameEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progress_percent_lesson"
+                android:layout_marginTop="@dimen/size_10"
+                android:layout_below="@+id/lessonNameEnglish"
+                android:max="100"
+                android:progress="65"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginRight="@dimen/size_5"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_favorite_lesson"
+            android:id="@+id/img_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

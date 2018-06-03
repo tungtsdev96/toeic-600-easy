@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/frame_container_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,7 +16,8 @@
         android:id="@+id/bottom_navi_home"
         android:layout_gravity="bottom"
         app:menu="@menu/menu_bottom_navi_home"
-        app:elevation="@dimen/size_5"
+        app:elevation="@dimen/size_8"
+        app:layout_behavior="tungts.hust.edu.toeic600.main.home.BottomNavigationBehavior"
         style="@style/BottomNavigationView"/>
 
 </android.support.design.widget.CoordinatorLayout>
