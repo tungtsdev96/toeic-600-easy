@@ -6,14 +6,21 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import butterknife.BindView;
 import tungts.hust.edu.toeic600.R;
 import tungts.hust.edu.toeic600.BaseFragment;
+import tungts.hust.edu.toeic600.main.MainActivity;
+import tungts.hust.edu.toeic600.main.home.favorite.FavoriteFragment;
 import tungts.hust.edu.toeic600.main.home.lesson.LessonFragment;
+import tungts.hust.edu.toeic600.main.home.video.VideoFragment;
 
 public class HomeFragment extends BaseFragment implements BottomNavigationView.OnNavigationItemSelectedListener {
+
 
     @BindView(R.id.bottom_navi_home)
     BottomNavigationView bottomNavigationView;
@@ -55,20 +62,26 @@ public class HomeFragment extends BaseFragment implements BottomNavigationView.O
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         item.setChecked(true);
         switch (item.getItemId()){
             case R.id.navi_lesson:
                 loadFragmnet(LessonFragment.newInstance());
                 break;
-//            case R.id.navi_subject:
-//                loadFragmnet(LessonFragment.newInstance());
-//                break;
             case R.id.navi_favorite:
-                loadFragmnet(LessonFragment.newInstance());
+                loadFragmnet(FavoriteFragment.newInstance("Favorite Fragment"));
+                break;
+            case R.id.navi_video :
+                loadFragmnet(VideoFragment.newInstance());
+                break;
+            case R.id.navi_play_game:
                 break;
             case R.id.navi_profile:
-                loadFragmnet(LessonFragment.newInstance());
                 break;
         }
         return true;

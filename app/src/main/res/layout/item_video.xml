@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground"
+    android:focusable="true">
+
+    <ImageView
+        android:src="@drawable/loading_thumbnail"
+        android:layout_centerVertical="true"
+        android:id="@+id/img_video"
+        android:layout_marginLeft="@dimen/size_10"
+        android:layout_marginRight="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_5"
+        android:layout_marginBottom="@dimen/size_5"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_90"/>
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/img_video"
+        android:layout_marginRight="@dimen/size_10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_10">
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Ondirection"
+            android:textColor="@color/bg_name_topic_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="12sp"
+            android:text="dasdas"
+            android:textColor="@color/bg_name_topic_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

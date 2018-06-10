@@ -9,13 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import tungts.hust.edu.toeic600.R;
+import tungts.hust.edu.toeic600.customview.ClickLikeButton;
 import tungts.hust.edu.toeic600.customview.RecycleViewItemClick;
 import tungts.hust.edu.toeic600.entity.Lesson;
+import tungts.hust.edu.toeic600.main.home.favorite.favoritelesson.ClickUnlikeLesson;
 import tungts.hust.edu.toeic600.utils.Constant;
 import tungts.hust.edu.toeic600.utils.GlideHelper;
 import tungts.hust.edu.toeic600.utils.Utils;
@@ -27,6 +31,7 @@ public class LessonGridAdapter extends RecyclerView.Adapter<LessonGridAdapter.Le
     LayoutInflater layoutInflater;
     RecyclerView rcv;
     RecycleViewItemClick onRecycleViewItemClick;
+    ClickUnlikeLesson onClickUnlikeLesson;
 
     public LessonGridAdapter(Context context, ArrayList<Lesson> arrLessons, RecyclerView rcv) {
         this.context = context;
@@ -42,14 +47,14 @@ public class LessonGridAdapter extends RecyclerView.Adapter<LessonGridAdapter.Le
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final LessonHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final LessonHolder holder, final int position) {
         final Lesson lesson = arrLessons.get(position);
         int idRes = Utils.convertNameToResId(context, lesson.getImageName(), Constant.DRAWABLE_FOLDER);
         GlideHelper.loadImageDrawable(context, idRes, holder.img_lesson);
         holder.lessonNameEnglish.setText(lesson.getLessonNameEnglish());
-        holder.btn_like.setText(
-                lesson.isFavorite() ? "UNLIKE" : "LIKE"
-        );
+        if (rcv.getId() == R.id.rcv){
+            holder.ic_delete_fav.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -65,22 +70,26 @@ public class LessonGridAdapter extends RecyclerView.Adapter<LessonGridAdapter.Le
         this.onRecycleViewItemClick = onRecycleViewItemClick;
     }
 
+    public ClickUnlikeLesson getOnClickUnlikeLesson() {
+        return onClickUnlikeLesson;
+    }
+
+    public void setOnClickUnlikeLesson(ClickUnlikeLesson onClickUnlikeLesson) {
+        this.onClickUnlikeLesson = onClickUnlikeLesson;
+    }
+
     protected class LessonHolder extends BaseViewHolder{
 
         @BindView(R.id.img_lesson)
         ImageView img_lesson;
         @BindView(R.id.lessonNameEnglish)
         TextView lessonNameEnglish;
-        @BindView(R.id.progress_percent_lesson)
-        ProgressBar progress_percent_lesson;
-        @BindView(R.id.tv_like)
-        TextView btn_like;
-        @BindView(R.id.item_lesson)
-        View item_lesson;
+        @BindView(R.id.ic_delete_fav)
+        ImageView ic_delete_fav;
 
         public LessonHolder(View itemView) {
             super(itemView);
-            item_lesson.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (onRecycleViewItemClick != null){
@@ -88,6 +97,16 @@ public class LessonGridAdapter extends RecyclerView.Adapter<LessonGridAdapter.Le
                     }
                 }
             });
+
+            ic_delete_fav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onClickUnlikeLesson != null){
+                        onClickUnlikeLesson.clickUnlike(getAdapterPosition());
+                    }
+                }
+            });
+
         }
     }
 

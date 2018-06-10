@@ -17,8 +17,16 @@
         android:icon="@drawable/ic_favorite"/>
 
     <!--video-->
+    <item
+        android:id="@+id/navi_video"
+        android:title="@string/navi_learn_by_video"
+        android:icon="@drawable/ic_video"/>
 
     <!--game-->
+    <item
+        android:id="@+id/navi_play_game"
+        android:title="@string/navi_play_game"
+        android:icon="@drawable/ic_playgame"/>
 
     <item
         android:id="@+id/navi_profile"

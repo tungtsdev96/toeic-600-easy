@@ -8,7 +8,8 @@ public class DatabaseConstant {
 
     //table vocabulary
     public static final String TABLE_VOCABULARY= "vocabulary";
-    public static final String VOCABULARY_ID= "vocabulary_type";
+    public static final String VOCABULARY_ID= "id";
+    public static final String VOCABULARY_TYPE= "vocabulary_type";
     public static final String VOCABULARY_EXAMPLE_EN = "example_en";
     public static final String VOCABULARY_EXAMPLE_VI = "example_vi";
     public static final String VOCABULARY_LESSON_ID = "lession_id";
@@ -16,8 +17,10 @@ public class DatabaseConstant {
     public static final String VOCABULARY_PRONUNCIATION = "pronunciation";
     public static final String VOCABULARY_EN = "vocabulary_en";
     public static final String VOCABULARY_VI = "vocabulary_vi";
+    public static final String VOCABULARY_EXPLANTION = "explantion";
     public static final String VOCABULARY_REMIND = "remind";
     public static final String VOCABULARY_SCORE = "score";
+    public static final String VOCABULARY_FAVORITE = "is_favorite";
 
     //table category
     public static final String TABLE_CATEGORY = "Category";

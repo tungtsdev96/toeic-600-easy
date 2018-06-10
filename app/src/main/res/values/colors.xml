@@ -18,6 +18,6 @@
     <color name="bg_name_topic_purple">#5867bc</color>
     <color name="text_green">#32c460</color>
     <color name="secondary_text">#757575</color>
-
+    <color name="text_lesson">#333435</color>
 
 </resources>

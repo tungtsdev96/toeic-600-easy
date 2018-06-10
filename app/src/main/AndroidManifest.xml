@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tungts.hust.edu.toeic600">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".ApplicationToeic"
         android:allowBackup="true"
@@ -22,7 +24,11 @@
         </activity>
 
         <activity
-            android:name=".specifictopic.SpecificLessonActivity"
+            android:name=".specificlesson.SpecificLessonActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".specificvocabulary.SpecificVocabularyActivity"
             android:screenOrientation="portrait"/>
 
     </application>

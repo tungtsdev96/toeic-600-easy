@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -84,21 +85,19 @@ public class LessonLinearAdapter extends RecyclerView.Adapter<LessonLinearAdapte
         TextView lessonNameEnglish;
         @BindView(R.id.progress_percent_lesson)
         ProgressBar progress_percent_lesson;
-//        @BindView(R.id.tv_like)
-//        TextView btn_like;
-//        @BindView(R.id.item_lesson)
-//        View item_lesson;
+        @BindView(R.id.item_lesson_linear)
+        RelativeLayout item_lesson_linear;
 
         public LessonHolder(View itemView) {
             super(itemView);
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    if (onRecycleViewItemClick != null){
-//                        onRecycleViewItemClick.itemClick(getAdapterPosition());
-//                    }
-//                }
-//            });
+            item_lesson_linear.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onRecycleViewItemClick != null){
+                        onRecycleViewItemClick.itemClick(getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 

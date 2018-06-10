@@ -1,4 +1,4 @@
-package tungts.hust.edu.toeic600.specifictopic;
+package tungts.hust.edu.toeic600.specificlesson;
 
 import android.content.Context;
 

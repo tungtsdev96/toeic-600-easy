@@ -27,10 +27,10 @@
 
         <menu>
             <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/navi_learn_by_video"
-                    android:title="@string/navi_learn_by_video"
-                    android:icon="@drawable/ic_video"/>
+                <!--<item-->
+                    <!--android:id="@+id/navi_learn_by_video"-->
+                    <!--android:title="@string/navi_learn_by_video"-->
+                    <!--android:icon="@drawable/ic_video"/>-->
 
                 <item
                     android:id="@+id/navi_read_pharagraph"
@@ -47,10 +47,10 @@
                     android:title="@string/navi_quiz_favorite"
                     android:icon="@drawable/ic_quiz_favorite"/>
 
-                <item
-                    android:id="@+id/navi_play_game"
-                    android:title="@string/navi_play_game"
-                    android:icon="@drawable/ic_playgame"/>
+                <!--<item-->
+                    <!--android:id="@+id/navi_play_game"-->
+                    <!--android:title="@string/navi_play_game"-->
+                    <!--android:icon="@drawable/ic_playgame"/>-->
             </group>
         </menu>
     </item>

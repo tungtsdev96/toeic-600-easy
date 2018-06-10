@@ -12,10 +12,10 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 
 import java.io.File;
@@ -27,7 +27,7 @@ import butterknife.BindView;
 import tungts.hust.edu.toeic600.R;
 import tungts.hust.edu.toeic600.BaseActivity;
 import tungts.hust.edu.toeic600.database.DatabaseConstant;
-import tungts.hust.edu.toeic600.main.favoritelesson.FavoriteLessonFragment;
+import tungts.hust.edu.toeic600.main.home.favorite.FavoriteFragment;
 import tungts.hust.edu.toeic600.main.grammar.GrammarFragment;
 import tungts.hust.edu.toeic600.main.home.HomeFragment;
 
@@ -39,11 +39,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @BindView(R.id.navigation_view)
     NavigationView navigationView;
 
-    @BindView(R.id.coordinator)
-    CoordinatorLayout coordinator;
-
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.container)
+    FrameLayout container;
 
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -65,20 +62,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     protected void addControl(Bundle savedInstanceState) {
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
         mHandler = new Handler();
-        drawerLayout.setScrimColor(Color.TRANSPARENT);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close){
-            @Override
-            public void onDrawerSlide(View drawerView, float slideOffset) {
-                super.onDrawerSlide(drawerView, slideOffset);
-                float slideX = drawerView.getWidth() * slideOffset;
-                coordinator.setTranslationX(slideX);
-            }
-        };
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        actionBarDrawerToggle.syncState();
+//        setUpDrawerLayout(toolbar);
         navigationView.setNavigationItemSelectedListener(this);
 
         if (savedInstanceState == null) {
@@ -88,6 +74,21 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         }
 
         processCoppyDatabase();
+    }
+
+    public void setUpDrawerLayout(Toolbar toolbar) {
+        drawerLayout.setScrimColor(Color.TRANSPARENT);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close){
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                float slideX = drawerView.getWidth() * slideOffset;
+                container.setTranslationX(slideX);
+            }
+        };
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBarDrawerToggle.syncState();
     }
 
     @Override
@@ -137,8 +138,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.navi_grammar:
                 CURRENT_TAG = TAG_GRAMMAR;
                 navItemIndex = 2;
-                break;
-            case R.id.navi_learn_by_video:
                 break;
             case R.id.navi_read_pharagraph:
                 break;
@@ -207,7 +206,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case 0:
                 return HomeFragment.newInstance(TAG_HOME);
             case 1:
-                return FavoriteLessonFragment.newInstance(TAG_FAVORITE_LESSON);
+                return FavoriteFragment.newInstance(TAG_FAVORITE_LESSON);
             case 2:
                 return GrammarFragment.newInstance(TAG_GRAMMAR);
             default:

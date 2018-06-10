@@ -6,5 +6,6 @@ public class Constant {
     public static final String DRAWABLE_FOLDER = "drawable";
 
     public static final String KEY_BUNDLE_LESSON = "bundle_lesson";
+    public static final String KEY_BUNDLE_VOCABULARY = "bundle_vocabulary";
 
 }

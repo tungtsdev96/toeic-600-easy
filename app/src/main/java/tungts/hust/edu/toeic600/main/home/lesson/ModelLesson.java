@@ -27,7 +27,7 @@ public class ModelLesson extends DatabaseHelper implements MVPLesson.IModelLesso
             lesson.setLessonNameEnglish(c.getString(c.getColumnIndex(DatabaseConstant.LESSON_NAME_EN)));
             lesson.setLessonNameVietNamese(c.getString(c.getColumnIndex(DatabaseConstant.LESSON_NAME_VI)));
             lesson.setId_category(c.getInt(c.getColumnIndex(DatabaseConstant.LESSON_CATEGORY_ID)));
-            lesson.setImageName(c.getString(c.getColumnIndex(DatabaseConstant.LESSON_PERCENT_LEARNED)));
+            lesson.setPercent_learned(c.getInt(c.getColumnIndex(DatabaseConstant.LESSON_PERCENT_LEARNED)));
             lesson.setNoteLessonEnglish(c.getString(c.getColumnIndex(DatabaseConstant.LESSON_NOTE)));
             lesson.setTimeNeedToLearn(c.getString(c.getColumnIndex(DatabaseConstant.LESSON_TIME_NEED_TO_LEARN)));
             lesson.setFavorite(c.getInt(c.getColumnIndex(DatabaseConstant.LESSON_FAVORITE)) == 1 ? true : false);

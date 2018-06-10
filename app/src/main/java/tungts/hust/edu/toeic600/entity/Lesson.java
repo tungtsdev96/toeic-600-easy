@@ -8,19 +8,19 @@ public class Lesson implements Serializable{
     private String lessonNameEnglish;
     private String lessonNameVietNamese;
     private int id_category;
-    private String imageName;
+    private int percent_learned;
     private String noteLessonEnglish;
     private String timeNeedToLearn;
     private boolean isFavorite;
 
     public Lesson() {}
 
-    public Lesson(int id, String lessonNameEnglish, String lessonNameVietNamese, int id_category, String imageName, String noteLessonEnglish, String timeNeedToLearn, boolean isFavorite) {
+    public Lesson(int id, String lessonNameEnglish, String lessonNameVietNamese, int id_category, int percent_learned, String noteLessonEnglish, String timeNeedToLearn, boolean isFavorite) {
         this.id = id;
         this.lessonNameEnglish = lessonNameEnglish;
         this.lessonNameVietNamese = lessonNameVietNamese;
         this.id_category = id_category;
-        this.imageName = imageName;
+        this.percent_learned = percent_learned;
         this.noteLessonEnglish = noteLessonEnglish;
         this.timeNeedToLearn = timeNeedToLearn;
         this.isFavorite = isFavorite;
@@ -62,8 +62,12 @@ public class Lesson implements Serializable{
         return "ls_" + this.id;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public int getPercent_learned() {
+        return percent_learned;
+    }
+
+    public void setPercent_learned(int percent_learned) {
+        this.percent_learned = percent_learned;
     }
 
     public String getNoteLessonEnglish() {

@@ -8,39 +8,14 @@
     android:id="@+id/drawer_layout"
     tools:context=".main.MainActivity">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/coordinator"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?android:attr/actionBarSize"
-                    android:elevation="@dimen/size_4">
-                </android.support.v7.widget.Toolbar>
-
-        </android.support.design.widget.AppBarLayout>
 
         <FrameLayout
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--<fragment-->
-                <!--android:name="tungts.hust.edu.toeic600.main.home.HomeFragment"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"/>-->
-
         </FrameLayout>
 
-    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"

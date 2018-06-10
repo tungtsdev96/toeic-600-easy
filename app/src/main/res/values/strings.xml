@@ -12,16 +12,20 @@
     <string name="navi_favorite_lesson">Favorite Lesson</string>
     <string name="navi_grammar">English Grammar</string>
     <string name="group_learn_more_effective">LEARN MORE EFFECTIVE</string>
-    <string name="navi_learn_by_video">Learn Video</string>
+    <string name="navi_learn_by_video">Video</string>
     <string name="navi_read_pharagraph">Read Paragraph</string>
     <string name="navi_quiz">Vocabulary quiz</string>
     <string name="navi_quiz_favorite">Quiz favorite</string>
-    <string name="navi_play_game">Play Game</string>
+    <string name="navi_play_game">Game</string>
     <string name="group_setting">SETTINGS</string>
     <string name="navi_feedback">Feedback</string>
     <string name="navi_setting">Setting</string>
     <string name="open">Open Drawer Layout</string>
     <string name="close">Close Drawer Layout</string>
 
+    <string name="no_vocabulary_favorite">You don\'t have any favorite vocabulary!</string>
+    <string name="no_lesson_favorite">You don\'t have any lesson vocabulary!</string>
+
+    <string name="api_key">AIzaSyBaO9BNnqJQPwHRO3C4w9H9oQnTivCZBBE</string>
 
 </resources>

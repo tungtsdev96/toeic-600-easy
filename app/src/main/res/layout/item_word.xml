@@ -8,9 +8,9 @@
     app:cardUseCompatPadding="true">
 
     <LinearLayout
+        android:id="@+id/item_vocabulary"
         android:clickable="true"
         android:background="?attr/selectableItemBackground"
-        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
@@ -34,7 +34,7 @@
                 android:text="abide by" />
 
             <TextView
-                android:id="@+id/tvVocal"
+                android:id="@+id/tvVocalPronunciation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -73,6 +73,8 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:scaleX="0.8"
+                android:scaleY="0.8"
                 android:id="@+id/imgFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +82,8 @@
                 android:src="@drawable/ic_fav_border" />
 
             <ImageView
-                android:id="@+id/imgSound"
+                android:scaleX="0.8"
+                android:scaleY="0.8"  android:id="@+id/imgSound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imgFav"

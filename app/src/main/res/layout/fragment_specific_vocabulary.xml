@@ -1,0 +1,123 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/normal_padding_size">
+
+            <TextView
+                android:id="@+id/tvVocab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:layout_toLeftOf="@+id/btnSound"
+                android:layout_toStartOf="@+id/btnSound"
+                android:textColor="@color/colorPrimary"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                tools:text="tungts" />
+
+            <TextView
+                android:id="@+id/tvPronunciation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvVocab"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:layout_marginTop="@dimen/grid_item_padding_size"
+                android:layout_toLeftOf="@id/btnSound"
+                android:layout_toStartOf="@+id/btnSound"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                tools:text="/tung tê et /" />
+
+            <TextView
+                android:id="@+id/tvExplanation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPronunciation"
+                android:layout_marginBottom="@dimen/normal_padding_size"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:layout_marginTop="@dimen/normal_padding_size"
+                android:textColor="@color/text_green"
+                android:textSize="20sp"
+                tools:text="Day la explantion" />
+
+            <TextView
+                android:id="@+id/tvMeaning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvExplanation"
+                android:layout_marginBottom="@dimen/normal_padding_size"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:text="day la nghia cua tu" />
+
+            <TextView
+                android:id="@+id/tvExampleLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMeaning"
+                android:layout_marginBottom="@dimen/normal_padding_size"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:text="day la tieu de vi du" />
+
+            <TextView
+                android:id="@+id/tvExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvExampleLabel"
+                android:layout_marginBottom="@dimen/normal_padding_size"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:text="Day la vi du tieng anh" />
+
+            <TextView
+                android:id="@+id/tvExampleTrans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvExample"
+                android:layout_marginBottom="@dimen/normal_padding_size"
+                android:layout_marginEnd="@dimen/normal_padding_size"
+                android:layout_marginRight="@dimen/normal_padding_size"
+                android:textColor="#BDBDBD"
+                android:textStyle="italic"
+                tools:text="Day la phien ban tieng viet." />
+
+            <ImageButton
+                android:id="@+id/btnFav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_fav_border" />
+
+            <ImageButton
+                android:layout_marginRight="@dimen/size_10"
+                android:id="@+id/btnSound"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@id/btnFav"
+                android:layout_toStartOf="@+id/btnFav"
+                android:background="@drawable/ic_sound" />
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

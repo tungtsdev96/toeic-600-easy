@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import java.util.ArrayList;
 
@@ -15,13 +19,16 @@ import tungts.hust.edu.toeic600.customview.GirdSpacingItemDecoration;
 import tungts.hust.edu.toeic600.customview.RecycleViewItemClick;
 import tungts.hust.edu.toeic600.entity.Lesson;
 import tungts.hust.edu.toeic600.BaseFragment;
-import tungts.hust.edu.toeic600.specifictopic.SpecificLessonActivity;
+import tungts.hust.edu.toeic600.main.MainActivity;
+import tungts.hust.edu.toeic600.specificlesson.SpecificLessonActivity;
 import tungts.hust.edu.toeic600.utils.Constant;
 import tungts.hust.edu.toeic600.utils.Utils;
 
 public class LessonFragment extends BaseFragment implements MVPLesson.IViewLesson, RecycleViewItemClick {
 
-    @BindView(R.id.rcv)
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.rcv_lesson)
     RecyclerView rcv;
     ArrayList<Lesson> arrLessons;
     LessonGridAdapter lessonAdapter;
@@ -38,14 +45,23 @@ public class LessonFragment extends BaseFragment implements MVPLesson.IViewLesso
 
     @Override
     protected void onViewCreating() {
+        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity)getActivity()).setUpDrawerLayout(toolbar);
         presentLesson = new PresenterLesson(getContext(), this);
         presentLesson.showListLesson();
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_home_fragment, menu);
     }
 
     private void innitRcv() {
         lessonAdapter = new LessonGridAdapter(getContext(), arrLessons, rcv);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        rcv.addItemDecoration(new GirdSpacingItemDecoration(2, Utils.convertdpTopx(5, getContext()), true));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
+        rcv.addItemDecoration(new GirdSpacingItemDecoration(3, Utils.convertdpTopx(5, getContext()), false));
         rcv.setItemAnimator(new DefaultItemAnimator());
         rcv.setLayoutManager(gridLayoutManager);
         lessonAdapter.setOnRecycleViewItemClick(this);
@@ -73,6 +89,6 @@ public class LessonFragment extends BaseFragment implements MVPLesson.IViewLesso
         Intent intent = new Intent(getActivity(), SpecificLessonActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
-        getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
